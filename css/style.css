@@ -1,0 +1,45 @@
+body{
+	background: #f3f0f4;
+}
+
+h1.site_title{
+	text-align: center;
+}
+
+hr.site_title_rule {
+	border-color: #f3f0f4;
+	width: min(450px, 100%);
+}
+
+.picture_holder{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.picture_holder img{
+	height: 300px;
+	width: 300px;
+	margin: 10px;
+}
+
+.control_holder {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.control_holder div{
+	display: block;
+	float: left;
+	margin:5px;
+}
+
+.slidecontainer {
+	width: 450px;
+	margin: 10px;
+}

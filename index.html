@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nikki's Project Site</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/slider.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+	<h1 class="site_title">Nikki's Project Site</h1>
+	<hr class="site_title_rule">
+
+	<div class="picture_holder">
+		<img id="original_img" src ="/assets/Yellow_flower_400_bw.png"/>
+		<img id="noisty_img" src ="/assets/Yellow_flower_400_bw_noise.png"/>
+		<img id="denoised_img" src ="/assets/my_image.jpg"/>
+	</div>
+	<div class="control_holder">
+		<div class="slidecontainer">
+			<div>Lambda:</div>
+			<div id="lambdaOutput"></div>
+		  <input type="range" min="0.05" max="0.5" value="0.05" step="0.05" class="slider" id="lambdaSlider">
+		</div>
+		<div class="slidecontainer">
+			<div>Mu:</div>
+			<div id="muOutput"></div>
+		  <input type="range" min="0.04" max="0.4" value="0.04" step="0.02" class="slider" id="muSlider">
+		</div>
+	</div>
+
+</body>
+
+<script src="/js/main.js"></script>
+
+</html>
