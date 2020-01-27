@@ -1,5 +1,16 @@
+html {
+	width: 100%;
+	padding: 0;
+	display:flex;
+	justify-content:center;
+}
+
 body{
 	background: #f3f0f4;
+	width: min(1000px, 100%);
+	margin:0 auto;
+	font-family: 'Quicksand', sans-serif;
+	font-weight: 500;
 }
 
 h1.site_title{
@@ -8,7 +19,7 @@ h1.site_title{
 
 hr.site_title_rule {
 	border-color: #f3f0f4;
-	width: min(450px, 100%);
+	width: min(450px, 90%);
 }
 
 .picture_holder{
@@ -29,17 +40,70 @@ hr.site_title_rule {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
 	width: 100%;
 }
 
-.control_holder div{
+*.greek_symbol {
+	font-weight: 300;
+}
+
+.slidecontainer div{
 	display: block;
 	float: left;
-	margin:5px;
+	margin: 5px 10px;
 }
 
 .slidecontainer {
-	width: 450px;
-	margin: 10px;
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 400px;
+	margin: 10px 30px;
+}
+
+.text_holder {
+	width: min(900px, calc( 100% - 40px ) );
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.nav_holder {
+	width: 100%;
+	position: relative;
+	text-align:center;
+	display: flex;
+	justify-content:center;
+}
+
+.nav_holder a {
+	display: block;
+	float: left;
+	padding: 10px 0px;
+	width: 120px;
+	color: black;
+	text-decoration:none;
+	opacity: 0.9;
+	font-weight: bold;
+	/*background-color: rgba(0.9,0.9,0.9,0.03);*/
+}
+
+.nav_holder a:hover {
+	opacity: 1;
+}
+
+.nav_slider {
+	position: absolute;
+	height: 2px;
+	width:120px;
+	background-color: #b97ed6;
+	top: 0px;
+	left: 0px;
+	opacity: 0.7;
+	transition: opacity 0.3s;
+}
+
+.nav_slider.smooth_scroll {
+	transition: left ease-in-out 0.1s
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Nikki's Project Site</title>
+	<link rel="stylesheet" href="css/build/style.css">
+	<link rel="stylesheet" href="css/build/slider.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body id="home">
+
+	<h1 class="site_title">Total Variation Denoising</h1>
+	<hr class="site_title_rule">
+
+	<div class="nav_holder" id="nav_holder">
+		<a href="/">Split Bregman</a>
+		<a href="/admm.html">ADMM</a>
+		<a href="/filtering.html" id="active_nav">Filtering</a>
+	</div>
+	<div class="nav_slider" id="nav_slider"></div>
+
+	<div class="text_holder">
+		<p>The problem of Total Variation Denoising is known to be an ill-posed problem, but is very valuable to industry. Therefore, a range of algorithms have been invented to solve the optimisation problem.</p>
+		<p>On this website you will find results of the following processes:<p>
+		<ul>
+			<li>A section on median filtering, to illustrate the classic techniques used in Image Processing to remove noise.</li>
+			<li>Two modern algorithms for solving the Total Variation Denoising problem; Split Bregman and ADMM (The Alternating Directions Method with Multipliers).</li>
+		</ul>
+		<p>For comparison with the other algorithms, here are some filtered images, where we have used different filter sizes. Change the sliders to adjust the noise and change the kernel size. See below for more details on this process. <p>
+	</div>
+
+	<div class="picture_holder">
+		<img id="original_img" src ="/assets/Yellow_flower_400_bw.png"/>
+		<img id="noisy_img_Yellow_flower" src ="/assets/my_image.jpg"/>
+		<img id="denoised_img_Yellow_flower" src ="/assets/my_image.jpg"/>
+	</div>
+	<div class="control_holder">
+		<div class="slidecontainer">
+			<div class="greek_symbol">σ:</div>
+			<div id="sigmaOutput_Yellow_flower"></div>
+		  <input type="range" min="0.001" max="0.01" value="0.001" step="0.0005" class="slider" id="sigmaSlider_Yellow_flower">
+		</div>
+		<div class="slidecontainer">
+			<div>Kernel size:</div>
+			<div id="kernelOutput_Yellow_flower"></div>
+		  <input type="range" min="3" max="9" value="3" step="2" class="slider" id="kernelSlider_Yellow_flower">
+		</div>
+	</div>
+
+	<div class="picture_holder">
+		<img id="original_img" src ="/assets/Squirrel_bw.png"/>
+		<img id="noisy_img_Squirrel" src ="/assets/my_image.jpg"/>
+		<img id="denoised_img_Squirrel" src ="/assets/my_image.jpg"/>
+	</div>
+	<div class="control_holder">
+		<div class="slidecontainer">
+			<div class="greek_symbol">σ:</div>
+			<div id="sigmaOutput_Squirrel"></div>
+		  <input type="range" min="0.001" max="0.01" value="0.001" step="0.0005" class="slider" id="sigmaSlider_Squirrel">
+		</div>
+		<div class="slidecontainer">
+			<div>Kernel size:</div>
+			<div id="kernelOutput_Squirrel"></div>
+		  <input type="range" min="3" max="9" value="3" step="2" class="slider" id="kernelSlider_Squirrel">
+		</div>
+	</div>
+	<div class="text_holder">
+		<h2>Some title</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta efficitur aliquet. Sed aliquet pulvinar felis nec tincidunt. Nullam sit amet nisi lobortis, cursus tellus posuere, interdum dolor. Vestibulum dui nibh, feugiat porta eros sit amet, luctus aliquet mauris. Integer id massa id mauris finibus interdum a dictum ante. Cras mollis, lectus vel sagittis eleifend, lorem diam varius diam, in tincidunt risus nibh vehicula metus. Sed consectetur lacus purus, vitae convallis elit blandit et. Sed nec sodales ligula.</p>
+		<p>Maecenas nec magna sed odio consectetur dapibus eget a erat. Integer sit amet justo nisl. Etiam maximus posuere diam ut sollicitudin. Fusce sed massa pellentesque velit laoreet ultrices. Etiam lectus felis, laoreet quis dapibus a, facilisis ac ligula. Donec sodales eleifend pellentesque. Duis id elementum nisi. Curabitur at mollis nisi, nec consectetur lectus. Fusce dignissim suscipit metus. Nulla facilisi. Morbi finibus, arcu sit amet vehicula venenatis, tortor neque efficitur erat, quis viverra nulla sapien at est. Vivamus elit felis, elementum eu purus dignissim, ornare ultricies massa. Duis facilisis, felis non aliquet elementum, dolor lectus varius magna, vel auctor quam orci ut ante. Mauris rhoncus pulvinar metus, nec tincidunt magna iaculis finibus. Proin vel enim aliquet, vulputate ex id, vestibulum turpis.</p>
+		<p>Sed aliquet ultrices mi et mattis. Praesent ac nisi tincidunt, pellentesque nulla vitae, iaculis erat. Etiam vel purus ligula. Quisque finibus sapien sit amet sagittis iaculis. Praesent ultricies lobortis eros at porta. Vestibulum in interdum leo, nec lacinia risus. Nulla quis mattis sem.</p>
+		<p>Quisque consectetur, elit in interdum semper, tellus metus condimentum turpis, vel pretium nulla tellus sed leo. Proin sed enim id massa sodales facilisis. Donec sit amet ligula eu odio sollicitudin hendrerit. Duis eu ipsum eu neque pulvinar bibendum. Quisque mollis erat ac urna molestie feugiat. Nunc vitae arcu pulvinar, gravida arcu sed, hendrerit diam. Aenean ultricies justo urna, ac molestie sem aliquam ut. Nullam vel posuere felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam ornare ex pulvinar dolor placerat, eget maximus leo tempor.</p>
+		<p>Vivamus rutrum ornare mauris in pellentesque. Sed vehicula ante malesuada dolor pharetra, sed faucibus erat cursus. Morbi lacinia tellus justo, ullamcorper mattis metus ultrices sed. Etiam malesuada hendrerit eros nec fringilla. Mauris non ullamcorper felis. Maecenas tincidunt, nibh in dignissim pulvinar, enim velit hendrerit justo, eget iaculis ex lectus vehicula magna. Quisque ornare accumsan urna, ac posuere enim ullamcorper id. Ut sed viverra libero. Suspendisse potenti. Ut viverra tristique ipsum, sit amet dignissim enim faucibus ornare. Donec a lobortis est, id dignissim urna. Phasellus tristique felis et accumsan maximus.</p>
+	</div>
+
+</body>
+
+<script src="/js/filtering.js"></script>
+<script src="/js/nav.js"></script>
+
+</html>

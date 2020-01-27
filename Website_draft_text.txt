@@ -1,0 +1,17 @@
+The problem of Total Variation Denoising is known to be an ill-posed problem, but is very valuable to industry. Therefore, a range of algorithms have been invented to solve the optimisation problem. 
+
+On this website you will find results of the following processes: 
+
+A section on median filtering, to illustrate the classic techniques used in Image Processing to remove noise. 
+Two modern algorithms for solving the Total Variation Denoising problem; Split Bregman and ADMM (The Alternating Directions Method with Multipliers). 
+
+The Split Bregman Algorithm 
+
+Here you find results for the Split Bregman algorithm, change the sliders to see how the constants lambda and mu affect the results. See below for more details on this algorithm. 
+
+The ADMM Algorithm 
+Here you find some results for my implementation of the ADMM algorithm. Change the sliders to see how the constants lambda, mu_1 and mu_2 affect the results. See below for more details on this algorithm.
+
+Median Filtering 
+
+For comparison with the other algorithms, here are some filtered images, where we have used different filter sizes. Change the sliders to adjust the noise and change the kernel size. See below for more details on this process. 
