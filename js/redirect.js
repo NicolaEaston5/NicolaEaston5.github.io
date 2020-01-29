@@ -1,5 +1,8 @@
 var links = [
-	{ name: 'SB1', url: 'http://nicolaeaston5.github.io/SB1' }
+	{ name: 'SB', url: 'http://nicolaeaston5.github.io/' },
+	{ name: 'ADMM', url: 'http://nicolaeaston5.github.io/admm.html' },
+	{ name: 'MED', url: 'http://nicolaeaston5.github.io/filtering.html' },
+	{ name: 'ADD', url: 'http://nicolaeaston5.github.io/' }
 ];
 
 // From https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
