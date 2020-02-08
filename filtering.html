@@ -72,15 +72,17 @@
 		</div>
 	</div>
 	<div class="text_holder">
-		<h2>Some title</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta efficitur aliquet. Sed aliquet pulvinar felis nec tincidunt. Nullam sit amet nisi lobortis, cursus tellus posuere, interdum dolor. Vestibulum dui nibh, feugiat porta eros sit amet, luctus aliquet mauris. Integer id massa id mauris finibus interdum a dictum ante. Cras mollis, lectus vel sagittis eleifend, lorem diam varius diam, in tincidunt risus nibh vehicula metus. Sed consectetur lacus purus, vitae convallis elit blandit et. Sed nec sodales ligula.</p>
-		<p>Maecenas nec magna sed odio consectetur dapibus eget a erat. Integer sit amet justo nisl. Etiam maximus posuere diam ut sollicitudin. Fusce sed massa pellentesque velit laoreet ultrices. Etiam lectus felis, laoreet quis dapibus a, facilisis ac ligula. Donec sodales eleifend pellentesque. Duis id elementum nisi. Curabitur at mollis nisi, nec consectetur lectus. Fusce dignissim suscipit metus. Nulla facilisi. Morbi finibus, arcu sit amet vehicula venenatis, tortor neque efficitur erat, quis viverra nulla sapien at est. Vivamus elit felis, elementum eu purus dignissim, ornare ultricies massa. Duis facilisis, felis non aliquet elementum, dolor lectus varius magna, vel auctor quam orci ut ante. Mauris rhoncus pulvinar metus, nec tincidunt magna iaculis finibus. Proin vel enim aliquet, vulputate ex id, vestibulum turpis.</p>
-		<p>Sed aliquet ultrices mi et mattis. Praesent ac nisi tincidunt, pellentesque nulla vitae, iaculis erat. Etiam vel purus ligula. Quisque finibus sapien sit amet sagittis iaculis. Praesent ultricies lobortis eros at porta. Vestibulum in interdum leo, nec lacinia risus. Nulla quis mattis sem.</p>
-		<p>Quisque consectetur, elit in interdum semper, tellus metus condimentum turpis, vel pretium nulla tellus sed leo. Proin sed enim id massa sodales facilisis. Donec sit amet ligula eu odio sollicitudin hendrerit. Duis eu ipsum eu neque pulvinar bibendum. Quisque mollis erat ac urna molestie feugiat. Nunc vitae arcu pulvinar, gravida arcu sed, hendrerit diam. Aenean ultricies justo urna, ac molestie sem aliquam ut. Nullam vel posuere felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam ornare ex pulvinar dolor placerat, eget maximus leo tempor.</p>
-		<p>Vivamus rutrum ornare mauris in pellentesque. Sed vehicula ante malesuada dolor pharetra, sed faucibus erat cursus. Morbi lacinia tellus justo, ullamcorper mattis metus ultrices sed. Etiam malesuada hendrerit eros nec fringilla. Mauris non ullamcorper felis. Maecenas tincidunt, nibh in dignissim pulvinar, enim velit hendrerit justo, eget iaculis ex lectus vehicula magna. Quisque ornare accumsan urna, ac posuere enim ullamcorper id. Ut sed viverra libero. Suspendisse potenti. Ut viverra tristique ipsum, sit amet dignissim enim faucibus ornare. Donec a lobortis est, id dignissim urna. Phasellus tristique felis et accumsan maximus.</p>
-	</div>
-
-</body>
+		<h2>What is a median filter?</h2>
+		<p>Let’s zoom into an image and consider a single pixel p.
+			 A median filter will look at a surrounding \( n \times n \) block of pixels, and replace the intensity of pixel p with the median value of these surrounding pixels.
+			 This way, if the pixel is noisy then it will allocate a value that should be ‘close’ to the value it is supposed to have.
+			 Also, taking the median means that any extreme pixel values, i.e. those of noisy pixels surrounding it, will be ignored.</p>
+		<p>This is very quick to calculate for an image, and therefore is widely used in Image Processing.
+			 However, naturally with the construction, we get some blurring occurring in the images.
+			 Think about if you had an edge of an object in your image. By using the median filter on these images, this edge will no longer be sharp since the contrast between the object and the environment around it will be reduced in this process.</p>
+		<p>In general, \( n \times n \) pixel blocks are considered for the ‘surrounding pixels’, where \( n \) is odd.
+			 The choice of this block size depends on how much noise is in the image, and ultimately the size of the image.
+			 Try changing the level of noise and the size of the blocks in the images above.</p>
 
 <script src="/js/filtering.js"></script>
 <script src="/js/nav.js"></script>

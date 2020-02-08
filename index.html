@@ -7,6 +7,14 @@
 	<link rel="stylesheet" href="css/build/slider.css">
 	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
 	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	<!--[if IE]>
@@ -73,13 +81,27 @@
 	</div>
 
 	<div class="text_holder">
-		<h2>Some title</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porta efficitur aliquet. Sed aliquet pulvinar felis nec tincidunt. Nullam sit amet nisi lobortis, cursus tellus posuere, interdum dolor. Vestibulum dui nibh, feugiat porta eros sit amet, luctus aliquet mauris. Integer id massa id mauris finibus interdum a dictum ante. Cras mollis, lectus vel sagittis eleifend, lorem diam varius diam, in tincidunt risus nibh vehicula metus. Sed consectetur lacus purus, vitae convallis elit blandit et. Sed nec sodales ligula.</p>
-		<p>Maecenas nec magna sed odio consectetur dapibus eget a erat. Integer sit amet justo nisl. Etiam maximus posuere diam ut sollicitudin. Fusce sed massa pellentesque velit laoreet ultrices. Etiam lectus felis, laoreet quis dapibus a, facilisis ac ligula. Donec sodales eleifend pellentesque. Duis id elementum nisi. Curabitur at mollis nisi, nec consectetur lectus. Fusce dignissim suscipit metus. Nulla facilisi. Morbi finibus, arcu sit amet vehicula venenatis, tortor neque efficitur erat, quis viverra nulla sapien at est. Vivamus elit felis, elementum eu purus dignissim, ornare ultricies massa. Duis facilisis, felis non aliquet elementum, dolor lectus varius magna, vel auctor quam orci ut ante. Mauris rhoncus pulvinar metus, nec tincidunt magna iaculis finibus. Proin vel enim aliquet, vulputate ex id, vestibulum turpis.</p>
-		<p>Sed aliquet ultrices mi et mattis. Praesent ac nisi tincidunt, pellentesque nulla vitae, iaculis erat. Etiam vel purus ligula. Quisque finibus sapien sit amet sagittis iaculis. Praesent ultricies lobortis eros at porta. Vestibulum in interdum leo, nec lacinia risus. Nulla quis mattis sem.</p>
-		<p>Quisque consectetur, elit in interdum semper, tellus metus condimentum turpis, vel pretium nulla tellus sed leo. Proin sed enim id massa sodales facilisis. Donec sit amet ligula eu odio sollicitudin hendrerit. Duis eu ipsum eu neque pulvinar bibendum. Quisque mollis erat ac urna molestie feugiat. Nunc vitae arcu pulvinar, gravida arcu sed, hendrerit diam. Aenean ultricies justo urna, ac molestie sem aliquam ut. Nullam vel posuere felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam ornare ex pulvinar dolor placerat, eget maximus leo tempor.</p>
-		<p>Vivamus rutrum ornare mauris in pellentesque. Sed vehicula ante malesuada dolor pharetra, sed faucibus erat cursus. Morbi lacinia tellus justo, ullamcorper mattis metus ultrices sed. Etiam malesuada hendrerit eros nec fringilla. Mauris non ullamcorper felis. Maecenas tincidunt, nibh in dignissim pulvinar, enim velit hendrerit justo, eget iaculis ex lectus vehicula magna. Quisque ornare accumsan urna, ac posuere enim ullamcorper id. Ut sed viverra libero. Suspendisse potenti. Ut viverra tristique ipsum, sit amet dignissim enim faucibus ornare. Donec a lobortis est, id dignissim urna. Phasellus tristique felis et accumsan maximus.</p>
+		<p>With this algorithm, we are trying to solve the (anisotropic) Total Variation Denoising Problem.
+			This is the optimisation problem given by
+			$$\min_f ||f-g||^2_2 + ||f||_{TV}$$
+			where we have that
+			$$||\cdot||_{TV} = \sum_i \sum_j \sqrt{(\nabla_x u(i,j))^2 + (\nabla_y u(i,j))^2}$$</p>
+		<p>Essentially, the first term
+			\( ||f-g||^2_2 \)
+			of the problem ensures that the denoised image has the same characteristics as the noisy image, and the second term \( ||f||_{TV} \) forces the denoising.</p>
+		<p>The issue with this problem, is that the Total Variation semi-norm is not differentiable, and so there is no closed form solution to the denoising problem.
+			Therefore, there are lots of algorithms that try to form an approximate solution, and here’s one of them.</p>
+		<p>Without stating the algorithm, it uses the Bregman iterative algorithm with splitting to solve the Total Variation Denoising problem.
+			For more information on the specifics, see [1] or [2].</p>
+		<p>Through the process of finding the algorithm, the main constant used for denoising switches from the \( \lambda \) to a \( \mu \).
+			The first constant then changes the stability of the algorithm, and the latter becomes the ‘blurring factor’.
+			To see for yourself how this changes the results, change the values of the sliders above.</p>
+		<h3>References</h3>
+		<p>[1]: Micchelli, Charles A., Lixin Shen, and Yuesheng Xu. "Proximity algorithms for image models: denoising." Inverse Problems 27.4 (2011): 045009.</p>
+		<p>[2]: Zhiwei (Tony) Qin, Donald Goldfarb & Shiqian Ma (2015) An alternating direction method for total variation denoising, Optimization Methods and Software, 30:3, 594-615</p>
 	</div>
+
+
 
 </body>
 
