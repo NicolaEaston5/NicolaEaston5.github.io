@@ -6,7 +6,7 @@ html {
 }
 
 body{
-	background: #f3f0f4;
+	background: var(--bg);
 	width: min(1000px, 100%);
 	margin:0 auto;
 	font-family: 'Quicksand', sans-serif;
@@ -18,7 +18,7 @@ h1.site_title{
 }
 
 hr.site_title_rule {
-	border-color: #f3f0f4;
+	border-color: var(--bg);
 	width: min(450px, 90%);
 }
 
@@ -97,7 +97,7 @@ hr.site_title_rule {
 	position: absolute;
 	height: 2px;
 	width:120px;
-	background-color: #b97ed6;
+	background-color: var(--fore);
 	top: 0px;
 	left: 0px;
 	opacity: 0.7;
