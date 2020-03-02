@@ -21,9 +21,23 @@ function myRedirect( url ) {
 	window.location.href = url;
 }
 
+const defaultRedirect = 'https://nicolaeaston5.github.io/';
 var target = getParameterByName('target');
-links.forEach( link => {
-	if( target === link.name ) {
-		myRedirect(link.url);
+var redirected = false;
+
+// If there's no target do default
+if(target == null) {
+	myRedirect(defaultRedirect);
+} else {
+	// Try and redirect to target
+	links.forEach( link => {
+		if( target === link.name ) {
+			redirected = true;
+			myRedirect(link.url);
+		}
+	});
+	// Else redirect to default
+	if(!redirected) {
+		myRedirect(defaultRedirect);	
 	}
-});
+}
